@@ -181,7 +181,7 @@ config_dir = '/data'
 
 HA_TOPIC = 'ezville'
 STATE_TOPIC = HA_TOPIC + '/{}/{}/state'
-EW11_TOPIC = 'ew11'
+EW11_TOPIC = 'xi02'
 EW11_SEND_TOPIC = EW11_TOPIC + '/send'
 
 
@@ -191,7 +191,7 @@ def ezville_loop(config):
     # Log 생성 Flag
     debug = config['DEBUG_LOG']
     mqtt_log = config['MQTT_LOG']
-    ew11_log = config['EW11_LOG']
+    ew11_log = config['xi02_LOG']
     
     # 통신 모드 설정: mixed, socket, mqtt
     comm_mode = config['mode']
