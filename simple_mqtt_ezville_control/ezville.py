@@ -43,8 +43,8 @@ RS485_DEVICE = {
 
 # MQTT Discovery를 위한 Preset 정보
 DISCOVERY_DEVICE = {
-    'ids': ['ezville_wallpad',],
-    'name': 'ezville_wallpad',
+    'ids': ['xi_wallpad02',],
+    'name': 'xi_wallpad02',
     'mf': 'EzVille',
     'mdl': 'EzVille Wallpad',
     'sw': 'ktdo79/addons/ezville_wallpad',
@@ -597,7 +597,7 @@ def ezville_loop(config):
         payload['uniq_id'] = payload['name']
 
         # Discovery에 등록
-        topic = 'homeassistant/{}/ezville_wallpad/{}/config'.format(intg, payload['name'])
+        topic = 'homeassistant/{}/xi_wallpad02/{}/config'.format(intg, payload['name'])
         log('[INFO] 장치 등록:  {}'.format(topic))
         mqtt_client.publish(topic, json.dumps(payload))
 
@@ -976,7 +976,7 @@ def ezville_loop(config):
 
         
     # MQTT 통신
-    mqtt_client = mqtt.Client('mqtt-ezville')
+    mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, 'mqtt-xi02')
     mqtt_client.username_pw_set(config['mqtt_id'], config['mqtt_password'])
     mqtt_client.on_connect = on_connect
     mqtt_client.on_disconnect = on_disconnect
