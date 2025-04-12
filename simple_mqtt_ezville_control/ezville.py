@@ -179,7 +179,7 @@ def checksum(input_hex):
     
 config_dir = '/data'
 
-HA_TOPIC = 'xiwallpad02'
+HA_TOPIC = 'ezville'
 STATE_TOPIC = HA_TOPIC + '/{}/{}/state'
 EW11_TOPIC = 'xi02'
 EW11_SEND_TOPIC = EW11_TOPIC + '/send'
